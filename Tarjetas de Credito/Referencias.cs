@@ -21,31 +21,29 @@ namespace Tarjetas_de_Credito
         {
             try
             {
-                // 1. Limpiar el texto para que sea un número puro
-                string limpio = txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim();
-                double mensual = double.Parse(limpio);
+                // 1. Limpiamos y obtenemos el ingreso mensual
+                string textoLimpio = txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim();
+                double mensual = double.Parse(textoLimpio);
 
-                // 2. Calcular porcentaje según la tabla
+                // 2. Calculamos el porcentaje según tu tabla de reglas
                 double porcentaje = 0;
                 int hijos = (int)numericHijos.Value;
 
-                if (rbSoltero.Checked)
-                {
-                    porcentaje = 0.80; // Soltero 80%
-                }
+                if (rbSoltero.Checked) porcentaje = 0.80;
                 else if (rbCasado.Checked)
                 {
                     if (hijos == 0) porcentaje = 0.70;
                     else if (hijos == 1) porcentaje = 0.60;
                     else if (hijos == 2) porcentaje = 0.55;
-                    else porcentaje = 0.50; // 3 o más
+                    else porcentaje = 0.50;
                 }
 
-                // 3. Resultado de Ingreso Acumulable
+                // 3. Calculamos el ACUMULABLE (Este es el que manda)
                 double acumulable = mensual * porcentaje;
                 lblIngresoAcumulable.Text = acumulable.ToString("C2");
 
-                // 4. Decidir la Tarjeta según el Acumulable
+                // 4. AQUÍ ESTABA EL ERROR: Evaluamos el 'acumulable', no el 'mensual'
+                // Si 40,000 * 0.50 (casado con 3 hijos) = 20,000 -> Debe ser ORO
                 if (acumulable <= 10000)
                 {
                     txtPlanSugerido.Text = "BÁSICO";
@@ -56,7 +54,7 @@ namespace Tarjetas_de_Credito
                     txtPlanSugerido.Text = "ORO";
                     txtPlanSugerido.BackColor = Color.Gold;
                 }
-                else
+                else // Si es más de 30,000
                 {
                     txtPlanSugerido.Text = "PLATINUM";
                     txtPlanSugerido.BackColor = Color.Silver;
@@ -64,11 +62,11 @@ namespace Tarjetas_de_Credito
             }
             catch
             {
-                MessageBox.Show("Por favor, ingresa una cantidad válida en ingresos.");
+                MessageBox.Show("Escribe una cantidad válida (solo números) en el ingreso mensual.");
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnContinuar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPlanSugerido.Text))
             {
@@ -79,14 +77,6 @@ namespace Tarjetas_de_Credito
                 MessageBox.Show("Solicitud procesada con éxito. ¡Bienvenido a LinceCard!");
                 // Aquí podrías cerrar esta ventana y volver a la principal
                 this.Close();
-            }
-        }
-
-        private void txtIngresosMensuales_TextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(txtIngresosMensuales.Text, out double monto))
-            {
-                txtIngresosMensuales.Text = monto.ToString("C2");
             }
         }
     }

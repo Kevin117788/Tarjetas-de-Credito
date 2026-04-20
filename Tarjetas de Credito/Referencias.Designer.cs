@@ -198,7 +198,7 @@
             this.btnContinuar.TabIndex = 11;
             this.btnContinuar.Text = "CONTINUAR";
             this.btnContinuar.UseVisualStyleBackColor = true;
-            this.btnContinuar.Click += new System.EventHandler(this.button4_Click);
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // label9
             // 
@@ -282,7 +282,6 @@
             this.txtIngresosMensuales.Name = "txtIngresosMensuales";
             this.txtIngresosMensuales.Size = new System.Drawing.Size(144, 29);
             this.txtIngresosMensuales.TabIndex = 20;
-            this.txtIngresosMensuales.TextChanged += new System.EventHandler(this.txtIngresosMensuales_TextChanged);
             // 
             // lblIngresoAcumulable
             // 
