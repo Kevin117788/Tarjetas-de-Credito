@@ -17,6 +17,20 @@ namespace Tarjetas_de_Credito
         public Form1()
         {
             InitializeComponent();
+
+            // 1. Crear una nueva instancia de ToolTip
+            ToolTip toolTipTarjetas = new ToolTip();
+
+            // 2. Opcional: Configurar los tiempos (en milisegundos)
+            toolTipTarjetas.AutoPopDelay = 8000;  // Tiempo que el mensaje permanece visible (8 segundos)
+            toolTipTarjetas.InitialDelay = 300;   // Tiempo que tarda en aparecer el mensaje (0.3 segundos)
+            toolTipTarjetas.ReshowDelay = 200;    // Tiempo que tarda en aparecer entre controles
+            toolTipTarjetas.ShowAlways = true;    // Forzar a que se muestre incluso si la ventana no está activa
+
+            // 3. Asignar el texto a cada una de tus tarjetas (PictureBox)
+            toolTipTarjetas.SetToolTip(this.picBasica, "BASICO.. Límite de crédito $20,000.00 con tasa de interés del 65% anual.");
+            toolTipTarjetas.SetToolTip(this.pictureBoxOro, "ORO… Límite de crédito $50,000.00 con tasa de interés del 55% anual.");
+            toolTipTarjetas.SetToolTip(this.pictureBoxPlatinum, "PLATINUM.. Límite de crédito $200,000.00 con tasa de interés del 45% anual.");
         }
 
         private bool guardadoOro = false;
