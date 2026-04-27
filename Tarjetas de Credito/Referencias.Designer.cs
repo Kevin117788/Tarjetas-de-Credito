@@ -306,7 +306,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Tarjetas_de_Credito.Properties.Resources.logocard;
-            this.pictureBox1.Location = new System.Drawing.Point(345, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(347, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(309, 184);
