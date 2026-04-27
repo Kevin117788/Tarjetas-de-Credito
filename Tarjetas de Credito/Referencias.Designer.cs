@@ -306,7 +306,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Tarjetas_de_Credito.Properties.Resources.logocard;
-            this.pictureBox1.Location = new System.Drawing.Point(346, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(345, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(309, 184);
@@ -340,7 +340,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Referencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
