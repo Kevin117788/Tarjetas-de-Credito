@@ -30,121 +30,130 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label1 = new System.Windows.Forms.Label();
-            this.labelContinuar = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelContinuar = new System.Windows.Forms.Label();
             this.pictureBoxPlatinum = new System.Windows.Forms.PictureBox();
             this.pictureBoxOro = new System.Windows.Forms.PictureBox();
             this.picBasica = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.timerParpadeo = new System.Windows.Forms.Timer(this.components);
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlatinum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOro)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBasica)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // panel1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(215, 315);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(791, 38);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PLANES DE TARJETAS DE CREDITO QUE OFRECEMOS";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.labelContinuar);
+            this.panel1.Controls.Add(this.pictureBoxPlatinum);
+            this.panel1.Controls.Add(this.pictureBoxOro);
+            this.panel1.Controls.Add(this.picBasica);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(5, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1267, 895);
+            this.panel1.TabIndex = 0;
             // 
-            // labelContinuar
+            // label4
             // 
-            this.labelContinuar.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelContinuar.AutoSize = true;
-            this.labelContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelContinuar.Location = new System.Drawing.Point(345, 831);
-            this.labelContinuar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelContinuar.Name = "labelContinuar";
-            this.labelContinuar.Size = new System.Drawing.Size(526, 29);
-            this.labelContinuar.TabIndex = 7;
-            this.labelContinuar.Text = "PRESIONA UNA TECLA PARA CONTINUAR";
-            this.labelContinuar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.labelContinuar.Click += new System.EventHandler(this.label3_Click);
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(439, 243);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(388, 28);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Inteligencia En Cada Movimiento.";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::Tarjetas_de_Credito.Properties.Resources.logocard;
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(453, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(447, 18);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(367, 221);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
+            // 
+            // labelContinuar
+            // 
+            this.labelContinuar.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelContinuar.AutoSize = true;
+            this.labelContinuar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelContinuar.Location = new System.Drawing.Point(339, 847);
+            this.labelContinuar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelContinuar.Name = "labelContinuar";
+            this.labelContinuar.Size = new System.Drawing.Size(526, 29);
+            this.labelContinuar.TabIndex = 14;
+            this.labelContinuar.Text = "PRESIONA UNA TECLA PARA CONTINUAR";
+            this.labelContinuar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // pictureBoxPlatinum
             // 
             this.pictureBoxPlatinum.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxPlatinum.Image = global::Tarjetas_de_Credito.Properties.Resources.TARJETA_PLATINUM;
-            this.pictureBoxPlatinum.Location = new System.Drawing.Point(875, 406);
-            this.pictureBoxPlatinum.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxPlatinum.Location = new System.Drawing.Point(869, 422);
+            this.pictureBoxPlatinum.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxPlatinum.Name = "pictureBoxPlatinum";
             this.pictureBoxPlatinum.Size = new System.Drawing.Size(337, 340);
             this.pictureBoxPlatinum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxPlatinum.TabIndex = 5;
+            this.pictureBoxPlatinum.TabIndex = 13;
             this.pictureBoxPlatinum.TabStop = false;
-            this.pictureBoxPlatinum.Click += new System.EventHandler(this.pictureBoxPlatinum_Click);
-            this.pictureBoxPlatinum.MouseEnter += new System.EventHandler(this.pictureBox3_MouseEnter);
-            this.pictureBoxPlatinum.MouseLeave += new System.EventHandler(this.pictureBoxPlatinum_MouseLeave);
+            this.pictureBoxPlatinum.Click += new System.EventHandler(this.pictureBoxPlatinum_Click_1);
             // 
             // pictureBoxOro
             // 
             this.pictureBoxOro.BackColor = System.Drawing.Color.Transparent;
             this.pictureBoxOro.Image = global::Tarjetas_de_Credito.Properties.Resources.TARJETA_ORO;
-            this.pictureBoxOro.Location = new System.Drawing.Point(480, 406);
-            this.pictureBoxOro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxOro.Location = new System.Drawing.Point(474, 422);
+            this.pictureBoxOro.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxOro.Name = "pictureBoxOro";
             this.pictureBoxOro.Size = new System.Drawing.Size(319, 340);
             this.pictureBoxOro.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxOro.TabIndex = 4;
+            this.pictureBoxOro.TabIndex = 12;
             this.pictureBoxOro.TabStop = false;
-            this.pictureBoxOro.Click += new System.EventHandler(this.pictureBoxOro_Click);
-            this.pictureBoxOro.MouseEnter += new System.EventHandler(this.pictureBoxOro_MouseEnter);
-            this.pictureBoxOro.MouseLeave += new System.EventHandler(this.pictureBoxOro_MouseLeave);
+            this.pictureBoxOro.Click += new System.EventHandler(this.pictureBoxOro_Click_1);
             // 
             // picBasica
             // 
             this.picBasica.BackColor = System.Drawing.Color.Transparent;
             this.picBasica.Image = global::Tarjetas_de_Credito.Properties.Resources.TARJETA_BASICA;
-            this.picBasica.Location = new System.Drawing.Point(61, 406);
-            this.picBasica.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBasica.Location = new System.Drawing.Point(61, 422);
+            this.picBasica.Margin = new System.Windows.Forms.Padding(4);
             this.picBasica.Name = "picBasica";
             this.picBasica.Size = new System.Drawing.Size(343, 340);
             this.picBasica.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picBasica.TabIndex = 3;
+            this.picBasica.TabIndex = 11;
             this.picBasica.TabStop = false;
-            this.picBasica.Click += new System.EventHandler(this.picBasica_Click);
-            this.picBasica.MouseEnter += new System.EventHandler(this.picBasica_MouseEnter);
-            this.picBasica.MouseLeave += new System.EventHandler(this.picBasica_MouseLeave);
+            this.picBasica.Click += new System.EventHandler(this.picBasica_Click_1);
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calisto MT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(445, 227);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(388, 28);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Inteligencia En Cada Movimiento.";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft JhengHei UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(209, 331);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(791, 38);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "PLANES DE TARJETAS DE CREDITO QUE OFRECEMOS";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // timerParpadeo
             // 
             this.timerParpadeo.Enabled = true;
             this.timerParpadeo.Interval = 600;
-            this.timerParpadeo.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -152,36 +161,33 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(1273, 894);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.labelContinuar);
-            this.Controls.Add(this.pictureBoxPlatinum);
-            this.Controls.Add(this.pictureBoxOro);
-            this.Controls.Add(this.picBasica);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Form1_Load_1);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlatinum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOro)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBasica)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox picBasica;
-        private System.Windows.Forms.PictureBox pictureBoxOro;
-        private System.Windows.Forms.PictureBox pictureBoxPlatinum;
-        private System.Windows.Forms.Label labelContinuar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelContinuar;
+        private System.Windows.Forms.PictureBox pictureBoxPlatinum;
+        private System.Windows.Forms.PictureBox pictureBoxOro;
+        private System.Windows.Forms.PictureBox picBasica;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timerParpadeo;
     }
 }

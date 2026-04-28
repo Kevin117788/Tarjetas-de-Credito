@@ -27,10 +27,47 @@ namespace Tarjetas_de_Credito
             toolTipTarjetas.ReshowDelay = 200;    // Tiempo que tarda en aparecer entre controles
             toolTipTarjetas.ShowAlways = true;    // Forzar a que se muestre incluso si la ventana no está activa
 
+            // Habilitar dibujo personalizado (para cambiar tamaño y fuente)
+            toolTipTarjetas.OwnerDraw = true;
+            toolTipTarjetas.Draw += ToolTipTarjetas_Draw;
+            toolTipTarjetas.Popup += ToolTipTarjetas_Popup;
+
             // 3. Asignar el texto a cada una de tus tarjetas (PictureBox)
-            toolTipTarjetas.SetToolTip(this.picBasica, "BASICO.. Límite de crédito $20,000.00 con tasa de interés del 65% anual.");
-            toolTipTarjetas.SetToolTip(this.pictureBoxOro, "ORO… Límite de crédito $50,000.00 con tasa de interés del 55% anual.");
-            toolTipTarjetas.SetToolTip(this.pictureBoxPlatinum, "PLATINUM.. Límite de crédito $200,000.00 con tasa de interés del 45% anual.");
+            toolTipTarjetas.SetToolTip(this.picBasica, "BASICO. Límite de crédito $20,000.00 con tasa de interés del 65% anual.");
+            toolTipTarjetas.SetToolTip(this.pictureBoxOro, "ORO. Límite de crédito $50,000.00 con tasa de interés del 55% anual.");
+            toolTipTarjetas.SetToolTip(this.pictureBoxPlatinum, "PLATINUM. Límite de crédito $200,000.00 con tasa de interés del 45% anual.");
+        }
+
+        // Definimos la fuente (tamaño 12, negrita)
+        private Font fontToolTip = new Font("Arial", 11f, FontStyle.Bold);
+
+        private void ToolTipTarjetas_Popup(object sender, PopupEventArgs e)
+        {
+            // Calcula el tamaño necesario para el texto con la fuente más grande
+            Size textSize = TextRenderer.MeasureText(
+                ((ToolTip)sender).GetToolTip(e.AssociatedControl),
+                fontToolTip
+            );
+
+            // Añade un poco de relleno adicional (padding)
+            e.ToolTipSize = new Size(textSize.Width + 10, textSize.Height + 10);
+        }
+
+        private void ToolTipTarjetas_Draw(object sender, DrawToolTipEventArgs e)
+        {
+            // Dibujar fondo (puedes cambiar colores aquí)
+            e.Graphics.FillRectangle(SystemBrushes.Info, e.Bounds);
+            // Dibujar borde
+            e.DrawBorder();
+
+            // Dibujar el texto grande
+            using (StringFormat sf = new StringFormat())
+            {
+                sf.Alignment = StringAlignment.Center;
+                sf.LineAlignment = StringAlignment.Center;
+
+                e.Graphics.DrawString(e.ToolTipText, fontToolTip, SystemBrushes.InfoText, e.Bounds, sf);
+            }
         }
 
         private bool guardadoOro = false;
@@ -135,10 +172,9 @@ namespace Tarjetas_de_Credito
             labelContinuar.Visible = !labelContinuar.Visible;
         }
 
-        private void picBasica_Click(object sender, EventArgs e)
+        private void picBasica_Click_1(object sender, EventArgs e)
         {
-
-            Referencias segundaPagina = new Referencias();
+            frmReferencias segundaPagina = new frmReferencias();
 
             // Le decimos que use la misma ubicación (Location) que la ventana actual
             segundaPagina.StartPosition = FormStartPosition.Manual;
@@ -146,17 +182,32 @@ namespace Tarjetas_de_Credito
 
             segundaPagina.Show();
             this.Hide(); // Oculta la anterior
-
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-
+            // Aseguramos que el formulario pueda detectar pulsaciones de teclas sin importar
+            // qué control tenga el foco
+            this.KeyPreview = true;
         }
 
-        private void pictureBoxOro_Click(object sender, EventArgs e)
+        // Agrega este método para detectar la pulsación de la tecla
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Referencias segundaPagina = new Referencias();
+            frmReferencias segundaPagina = new frmReferencias();
+
+            // Le decimos que use la misma ubicación (Location) que la ventana actual
+            segundaPagina.StartPosition = FormStartPosition.Manual;
+            segundaPagina.Location = this.Location;
+
+            // Mostrar el nuevo formulario y ocultar el actual
+            segundaPagina.Show();
+            this.Hide(); 
+        }
+
+        private void pictureBoxOro_Click_1(object sender, EventArgs e)
+        {
+            frmReferencias segundaPagina = new frmReferencias();
 
             // Le decimos que use la misma ubicación (Location) que la ventana actual
             segundaPagina.StartPosition = FormStartPosition.Manual;
@@ -164,12 +215,11 @@ namespace Tarjetas_de_Credito
 
             segundaPagina.Show();
             this.Hide(); // Oculta la anterior
-
         }
 
-        private void pictureBoxPlatinum_Click(object sender, EventArgs e)
+        private void pictureBoxPlatinum_Click_1(object sender, EventArgs e)
         {
-            Referencias segundaPagina = new Referencias();
+            frmReferencias segundaPagina = new frmReferencias();
 
             // Le decimos que use la misma ubicación (Location) que la ventana actual
             segundaPagina.StartPosition = FormStartPosition.Manual;
@@ -177,7 +227,6 @@ namespace Tarjetas_de_Credito
 
             segundaPagina.Show();
             this.Hide(); // Oculta la anterior
-
         }
     }
 }

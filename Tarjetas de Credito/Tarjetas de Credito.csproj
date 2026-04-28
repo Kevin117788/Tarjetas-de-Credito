@@ -46,17 +46,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Adquisicion.cs">
+    <Compile Include="frmAdquisicion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Adquisicion.Designer.cs">
-      <DependentUpon>Adquisicion.cs</DependentUpon>
+    <Compile Include="frmAdquisicion.Designer.cs">
+      <DependentUpon>frmAdquisicion.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBuscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBuscar.Designer.cs">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,25 +71,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Referencias.cs">
+    <Compile Include="frmReferencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Referencias.Designer.cs">
-      <DependentUpon>Referencias.cs</DependentUpon>
+    <Compile Include="frmReferencias.Designer.cs">
+      <DependentUpon>frmReferencias.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Adquisicion.resx">
-      <DependentUpon>Adquisicion.cs</DependentUpon>
+    <Compile Include="TarjetaDeCreditoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TarjetaDeCreditoDataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="frmAdquisicion.resx">
+      <DependentUpon>frmAdquisicion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBuscar.resx">
+      <DependentUpon>frmBuscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Referencias.resx">
-      <DependentUpon>Referencias.cs</DependentUpon>
+    <EmbeddedResource Include="frmReferencias.resx">
+      <DependentUpon>frmReferencias.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,6 +108,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="TarjetaDeCreditoDataSet.xsc">
+      <DependentUpon>TarjetaDeCreditoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TarjetaDeCreditoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TarjetaDeCreditoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TarjetaDeCreditoDataSet.xss">
+      <DependentUpon>TarjetaDeCreditoDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
