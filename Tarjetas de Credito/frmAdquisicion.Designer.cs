@@ -247,6 +247,7 @@
             this.btnPantallaPrincipal.TabIndex = 95;
             this.btnPantallaPrincipal.Text = "PANTALLA PRINCIPAL";
             this.btnPantallaPrincipal.UseVisualStyleBackColor = true;
+            this.btnPantallaPrincipal.Click += new System.EventHandler(this.btnPantallaPrincipal_Click);
             // 
             // txtLimiteDeCredito
             // 

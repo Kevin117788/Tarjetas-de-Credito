@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace Tarjetas_de_Credito
 {
-    public partial class Form1 : Form
+    public partial class frmInicio : Form
     {
-        public Form1()
+        public frmInicio()
         {
             InitializeComponent();
 
