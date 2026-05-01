@@ -24,9 +24,48 @@ namespace Tarjetas_de_Credito
             // Asignar el evento click al boton de Pantalla Principal
             btnPantallaPrincipal.Click += BtnPantallaPrincipal_Click;
 
+            // Formatear al salir de la caja de texto
+            txtSaldoDeudor.Leave += TxtSaldoDeudor_Leave;
+
+            // Quitar el formato al entrar en la caja de texto
+            txtSaldoDeudor.Enter += TxtSaldoDeudor_Enter;
+
+            // Calcular automáticamente cuando presionen 'Enter' en el saldo deudor
+            txtSaldoDeudor.KeyDown += TxtSaldoDeudor_KeyDown;
+
             // Asignar los valores recibidos
             txtPlanSugerido.Text = planSugerido;
             txtPlanSugerido.ReadOnly = true;
+        }
+
+        private void TxtSaldoDeudor_Enter(object sender, EventArgs e)
+        {
+            // Remover símbolos de dinero para editar el número más fácilmente
+            txtSaldoDeudor.Text = txtSaldoDeudor.Text.Replace("$", "").Replace(",", "").Trim();
+        }
+
+        private void TxtSaldoDeudor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Prevenir el sonido 'ding'
+                e.SuppressKeyPress = true;
+
+                // Formatea automáticamente a dinero
+                TxtSaldoDeudor_Leave(this, EventArgs.Empty);
+
+                // Llama al clic de calcular simulando que el usuario lo presionó
+                BtnCalcular_Click(this, EventArgs.Empty);
+            }
+        }
+
+        private void TxtSaldoDeudor_Leave(object sender, EventArgs e)
+        {
+            // Formatear la caja de texto de Saldo Deudor con formato numérico de 2 decimales (sin símbolo de peso) cuando se le quita el foco
+            if (double.TryParse(txtSaldoDeudor.Text.Replace("$", "").Replace(",", "").Trim(), out double cantidad))
+            {
+                txtSaldoDeudor.Text = cantidad.ToString("N2");
+            }
         }
 
         private void BtnPantallaPrincipal_Click(object sender, EventArgs e)

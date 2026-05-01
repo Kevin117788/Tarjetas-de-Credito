@@ -56,6 +56,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnPantallaPrincipal = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -65,6 +66,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.Controls.Add(this.btnPantallaPrincipal);
             this.panel1.Controls.Add(this.txtFecha);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnBuscar);
@@ -162,6 +164,7 @@
             this.txtIngresosMensuales.Name = "txtIngresosMensuales";
             this.txtIngresosMensuales.Size = new System.Drawing.Size(191, 35);
             this.txtIngresosMensuales.TabIndex = 59;
+            this.txtIngresosMensuales.TextChanged += new System.EventHandler(this.txtIngresosMensuales_TextChanged);
             // 
             // txtDomicilio
             // 
@@ -383,6 +386,18 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "CURP:";
             // 
+            // btnPantallaPrincipal
+            // 
+            this.btnPantallaPrincipal.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPantallaPrincipal.Location = new System.Drawing.Point(747, 748);
+            this.btnPantallaPrincipal.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPantallaPrincipal.Name = "btnPantallaPrincipal";
+            this.btnPantallaPrincipal.Size = new System.Drawing.Size(174, 62);
+            this.btnPantallaPrincipal.TabIndex = 96;
+            this.btnPantallaPrincipal.Text = "PANTALLA PRINCIPAL";
+            this.btnPantallaPrincipal.UseVisualStyleBackColor = true;
+            this.btnPantallaPrincipal.Click += new System.EventHandler(this.btnPantallaPrincipal_Click);
+            // 
             // frmReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -437,5 +452,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Button btnPantallaPrincipal;
     }
 }

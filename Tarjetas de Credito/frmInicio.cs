@@ -32,42 +32,62 @@ namespace Tarjetas_de_Credito
             toolTipTarjetas.Draw += ToolTipTarjetas_Draw;
             toolTipTarjetas.Popup += ToolTipTarjetas_Popup;
 
-            // 3. Asignar el texto a cada una de tus tarjetas (PictureBox)
-            toolTipTarjetas.SetToolTip(this.picBasica, "BASICO. Límite de crédito $20,000.00 con tasa de interés del 65% anual.");
-            toolTipTarjetas.SetToolTip(this.pictureBoxOro, "ORO. Límite de crédito $50,000.00 con tasa de interés del 55% anual.");
-            toolTipTarjetas.SetToolTip(this.pictureBoxPlatinum, "PLATINUM. Límite de crédito $200,000.00 con tasa de interés del 45% anual.");
+            // 3. Asignar el texto a cada una de tus tarjetas (PictureBox) dividiendo después de 5 palabras
+            toolTipTarjetas.SetToolTip(this.picBasica, 
+                "BÁSICO. Límite de crédito $20,000.00\n" +
+                "con tasa de interés del\n" +
+                "65% anual.");
+
+            toolTipTarjetas.SetToolTip(this.pictureBoxOro, 
+                "ORO. Límite de crédito $50,000.00\n" +
+                "con tasa de interés del\n" +
+                "55% anual.");
+
+            toolTipTarjetas.SetToolTip(this.pictureBoxPlatinum, 
+                "PLATINUM. Límite de crédito $200,000.00\n" +
+                "con tasa de interés del\n" +
+                "45% anual.");
         }
 
         // Definimos la fuente (tamaño 12, negrita)
-        private Font fontToolTip = new Font("Arial", 11f, FontStyle.Bold);
+        private Font fontToolTip = new Font("Arial", 10f, FontStyle.Bold);
 
         private void ToolTipTarjetas_Popup(object sender, PopupEventArgs e)
         {
-            // Calcula el tamaño necesario para el texto con la fuente más grande
-            Size textSize = TextRenderer.MeasureText(
-                ((ToolTip)sender).GetToolTip(e.AssociatedControl),
-                fontToolTip
-            );
+            ToolTip toolTip = (ToolTip)sender;
+            string texto = toolTip.GetToolTip(e.AssociatedControl);
 
-            // Añade un poco de relleno adicional (padding)
-            e.ToolTipSize = new Size(textSize.Width + 10, textSize.Height + 10);
+            // Medimos usando el objeto Graphics temporal y quitando SingleLine
+            using (Graphics g = e.AssociatedControl.CreateGraphics())
+            {
+                Size textSize = TextRenderer.MeasureText(
+                    g, 
+                    texto, 
+                    fontToolTip,
+                    new Size(0, 0), // Permite que mida con saltos de línea correctamente
+                    TextFormatFlags.NoPadding
+                );
+
+                e.ToolTipSize = new Size(textSize.Width + 40, textSize.Height + 20);
+            }
         }
 
         private void ToolTipTarjetas_Draw(object sender, DrawToolTipEventArgs e)
         {
-            // Dibujar fondo (puedes cambiar colores aquí)
+            // Dibujar fondo 
             e.Graphics.FillRectangle(SystemBrushes.Info, e.Bounds);
             // Dibujar borde
             e.DrawBorder();
 
-            // Dibujar el texto grande
-            using (StringFormat sf = new StringFormat())
-            {
-                sf.Alignment = StringAlignment.Center;
-                sf.LineAlignment = StringAlignment.Center;
-
-                e.Graphics.DrawString(e.ToolTipText, fontToolTip, SystemBrushes.InfoText, e.Bounds, sf);
-            }
+            // Dibujar el texto centrándolo
+            TextRenderer.DrawText(
+                e.Graphics, 
+                e.ToolTipText, 
+                fontToolTip, 
+                e.Bounds, 
+                SystemColors.InfoText, 
+                TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter | TextFormatFlags.NoPadding
+            );
         }
 
         private bool guardadoOro = false;

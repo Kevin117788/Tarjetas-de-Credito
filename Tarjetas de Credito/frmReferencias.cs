@@ -38,6 +38,36 @@ namespace Tarjetas_de_Credito
 
             // Suscribir el evento Load del formulario
             this.Load += FrmReferencias_Load;
+
+            // Formatear al salir de la caja de texto
+            txtIngresosMensuales.Leave += TxtIngresosMensuales_Leave;
+
+            // Quitar el formato al entrar (hacer clic) en la caja de texto
+            txtIngresosMensuales.Enter += TxtIngresosMensuales_Enter;
+
+            // Suscribir el evento KeyDown para calcular automáticamente al dar Enter
+            txtIngresosMensuales.KeyDown += TxtIngresosMensuales_KeyDown;
+        }
+
+        private void TxtIngresosMensuales_Enter(object sender, EventArgs e)
+        {
+            // Remover el símbolo de peso y las comas para facilitar la edición
+            txtIngresosMensuales.Text = txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim();
+        }
+
+        private void TxtIngresosMensuales_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                // Previene que se haga el sonido 'ding' del sistema
+                e.SuppressKeyPress = true; 
+
+                // Forzamos el mismo proceso de formatear que se hace al salir de la caja
+                TxtIngresosMensuales_Leave(this, EventArgs.Empty);
+
+                // Mandamos a llamar la función que calcula como si le dieran al botón
+                btnCalcular_Click_1(this, EventArgs.Empty);
+            }
         }
 
         private void FrmReferencias_Load(object sender, EventArgs e)
@@ -61,6 +91,15 @@ namespace Tarjetas_de_Credito
 
             // Domicilio (VARCHAR(200))
             if (txtDomicilio != null) txtDomicilio.MaxLength = 200;
+        }
+
+        private void TxtIngresosMensuales_Leave(object sender, EventArgs e)
+        {
+            // Formatear la caja de texto con formato numérico de dos decimales (sin símbolo de peso) cuando se le quita el foco
+            if (double.TryParse(txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim(), out double cantidad))
+            {
+                txtIngresosMensuales.Text = cantidad.ToString("N2");
+            }
         }
 
         private void btnCalcular_Click_1(object sender, EventArgs e)
@@ -258,6 +297,25 @@ namespace Tarjetas_de_Credito
             }
         }
 
+        private void txtIngresosMensuales_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPantallaPrincipal_Click(object sender, EventArgs e)
+        {
+            frmInicio principal = new frmInicio();
+
+            // Lo posicionamos para que aparezca fluidamente donde está el formulario actual
+            principal.StartPosition = FormStartPosition.Manual;
+            principal.Location = this.Location;
+
+            // Mostramos el Form1
+            principal.Show();
+
+            // Cerramos o escondemos la ventana actual
+            this.Close();
+        }
     }
 
 }
