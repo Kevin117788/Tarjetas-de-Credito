@@ -30,25 +30,26 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.sqlCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.tarjetaDeCreditoDataSet = new Tarjetas_de_Credito.TarjetaDeCreditoDataSet();
-            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clientesTableAdapter = new Tarjetas_de_Credito.TarjetaDeCreditoDataSetTableAdapters.ClientesTableAdapter();
             this.idClientesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreCompletoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.curpDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.domicilioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tarjetaDeCreditoDataSet = new Tarjetas_de_Credito.TarjetaDeCreditoDataSet();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.sqlCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.clientesTableAdapter = new Tarjetas_de_Credito.TarjetaDeCreditoDataSetTableAdapters.ClientesTableAdapter();
             this.btnAgregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarjetaDeCreditoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetaDeCreditoDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idClientesDataGridViewTextBoxColumn,
@@ -56,38 +57,13 @@
             this.curpDataGridViewTextBoxColumn,
             this.domicilioDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clientesBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(800, 342);
+            this.dataGridView1.Size = new System.Drawing.Size(754, 431);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // sqlConnection1
-            // 
-            this.sqlConnection1.ConnectionString = "Data Source=Kevin;Initial Catalog=TarjetaDeCredito;User ID=sa;Password=1234567Abc" +
-    ";TrustServerCertificate=True";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
-            // sqlCommand1
-            // 
-            this.sqlCommand1.CommandText = "SELECT IdClientes, Nombre_Completo, Curp, Domicilio\r\nFROM     Clientes";
-            this.sqlCommand1.Connection = this.sqlConnection1;
-            // 
-            // tarjetaDeCreditoDataSet
-            // 
-            this.tarjetaDeCreditoDataSet.DataSetName = "TarjetaDeCreditoDataSet";
-            this.tarjetaDeCreditoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clientesBindingSource
-            // 
-            this.clientesBindingSource.DataMember = "Clientes";
-            this.clientesBindingSource.DataSource = this.tarjetaDeCreditoDataSet;
-            // 
-            // clientesTableAdapter
-            // 
-            this.clientesTableAdapter.ClearBeforeFill = true;
             // 
             // idClientesDataGridViewTextBoxColumn
             // 
@@ -125,30 +101,58 @@
             this.domicilioDataGridViewTextBoxColumn.ReadOnly = true;
             this.domicilioDataGridViewTextBoxColumn.Width = 125;
             // 
+            // clientesBindingSource
+            // 
+            this.clientesBindingSource.DataMember = "Clientes";
+            this.clientesBindingSource.DataSource = this.tarjetaDeCreditoDataSet;
+            // 
+            // tarjetaDeCreditoDataSet
+            // 
+            this.tarjetaDeCreditoDataSet.DataSetName = "TarjetaDeCreditoDataSet";
+            this.tarjetaDeCreditoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=Kevin;Initial Catalog=TarjetaDeCredito;User ID=sa;Password=1234567Abc" +
+    ";TrustServerCertificate=True";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            // 
+            // sqlCommand1
+            // 
+            this.sqlCommand1.CommandText = "SELECT IdClientes, Nombre_Completo, Curp, Domicilio\r\nFROM     Clientes";
+            this.sqlCommand1.Connection = this.sqlConnection1;
+            // 
+            // clientesTableAdapter
+            // 
+            this.clientesTableAdapter.ClearBeforeFill = true;
+            // 
             // btnAgregar
             // 
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(862, 69);
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.btnAgregar.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.Black;
+            this.btnAgregar.Location = new System.Drawing.Point(635, 496);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(127, 47);
+            this.btnAgregar.Size = new System.Drawing.Size(152, 47);
             this.btnAgregar.TabIndex = 1;
             this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.UseVisualStyleBackColor = false;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // frmBuscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1001, 550);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
+            this.ClientSize = new System.Drawing.Size(839, 572);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "frmBuscar";
             this.Text = "frmBuscar";
             this.Load += new System.EventHandler(this.frmBuscar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tarjetaDeCreditoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clientesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tarjetaDeCreditoDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
