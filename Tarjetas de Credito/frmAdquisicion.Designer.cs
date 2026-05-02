@@ -32,33 +32,33 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCalcular = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt1Menes = new System.Windows.Forms.TextBox();
-            this.txt3Meses = new System.Windows.Forms.TextBox();
-            this.txt6Meses = new System.Windows.Forms.TextBox();
-            this.btnPantallaPrincipal = new System.Windows.Forms.Button();
-            this.txtLimiteDeCredito = new System.Windows.Forms.TextBox();
-            this.txtSaldoDeudor = new System.Windows.Forms.TextBox();
-            this.txt12Meses = new System.Windows.Forms.TextBox();
             this.txtPlanSugerido = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtLimiteDeCredito = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtSaldoDeudor = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnPantallaPrincipal = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txt12Meses = new System.Windows.Forms.TextBox();
+            this.txt6Meses = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt3Meses = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt1Menes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,10 +88,10 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -100,6 +100,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
             this.panel1.Controls.Add(this.txtPlanSugerido);
             this.panel1.Controls.Add(this.txtLimiteDeCredito);
@@ -128,11 +129,52 @@
             this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txt1Menes);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 205);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1070, 795);
             this.panel1.TabIndex = 2;
+            // 
+            // txtPlanSugerido
+            // 
+            this.txtPlanSugerido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtPlanSugerido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPlanSugerido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlanSugerido.Location = new System.Drawing.Point(235, 51);
+            this.txtPlanSugerido.Multiline = true;
+            this.txtPlanSugerido.Name = "txtPlanSugerido";
+            this.txtPlanSugerido.Size = new System.Drawing.Size(218, 28);
+            this.txtPlanSugerido.TabIndex = 118;
+            // 
+            // txtLimiteDeCredito
+            // 
+            this.txtLimiteDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtLimiteDeCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLimiteDeCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLimiteDeCredito.Location = new System.Drawing.Point(305, 120);
+            this.txtLimiteDeCredito.Multiline = true;
+            this.txtLimiteDeCredito.Name = "txtLimiteDeCredito";
+            this.txtLimiteDeCredito.Size = new System.Drawing.Size(268, 31);
+            this.txtLimiteDeCredito.TabIndex = 121;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(65, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 24);
+            this.label2.TabIndex = 110;
+            this.label2.Text = "Plan Sugerido:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(265, 123);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(24, 28);
+            this.label19.TabIndex = 135;
+            this.label19.Text = "$";
             // 
             // btnCalcular
             // 
@@ -146,16 +188,7 @@
             this.btnCalcular.TabIndex = 136;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = false;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(265, 123);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(24, 28);
-            this.label19.TabIndex = 135;
-            this.label19.Text = "$";
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click_1);
             // 
             // label18
             // 
@@ -167,118 +200,36 @@
             this.label18.TabIndex = 134;
             this.label18.Text = "$";
             // 
-            // label17
+            // txtSaldoDeudor
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(417, 598);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(24, 28);
-            this.label17.TabIndex = 133;
-            this.label17.Text = "$";
+            this.txtSaldoDeudor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtSaldoDeudor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSaldoDeudor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSaldoDeudor.Location = new System.Drawing.Point(265, 295);
+            this.txtSaldoDeudor.Multiline = true;
+            this.txtSaldoDeudor.Name = "txtSaldoDeudor";
+            this.txtSaldoDeudor.Size = new System.Drawing.Size(352, 35);
+            this.txtSaldoDeudor.TabIndex = 120;
             // 
-            // label16
+            // label3
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(429, 527);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(24, 28);
-            this.label16.TabIndex = 132;
-            this.label16.Text = "$";
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(65, 123);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(198, 24);
+            this.label3.TabIndex = 111;
+            this.label3.Text = "Limite De Credito:";
             // 
-            // label15
+            // label4
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(424, 450);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(24, 28);
-            this.label15.TabIndex = 131;
-            this.label15.Text = "$";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(429, 372);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(24, 28);
-            this.label14.TabIndex = 130;
-            this.label14.Text = "$";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(699, 600);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(126, 24);
-            this.label13.TabIndex = 129;
-            this.label13.Text = "Mensuales.";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(699, 530);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(126, 24);
-            this.label11.TabIndex = 128;
-            this.label11.Text = "Mensuales.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(699, 449);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(126, 24);
-            this.label10.TabIndex = 127;
-            this.label10.Text = "Mensuales.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(718, 375);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 24);
-            this.label1.TabIndex = 126;
-            this.label1.Text = "Mensuales.";
-            // 
-            // txt1Menes
-            // 
-            this.txt1Menes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txt1Menes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt1Menes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt1Menes.Location = new System.Drawing.Point(451, 594);
-            this.txt1Menes.Multiline = true;
-            this.txt1Menes.Name = "txt1Menes";
-            this.txt1Menes.Size = new System.Drawing.Size(242, 34);
-            this.txt1Menes.TabIndex = 125;
-            // 
-            // txt3Meses
-            // 
-            this.txt3Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txt3Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt3Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt3Meses.Location = new System.Drawing.Point(457, 524);
-            this.txt3Meses.Multiline = true;
-            this.txt3Meses.Name = "txt3Meses";
-            this.txt3Meses.Size = new System.Drawing.Size(236, 34);
-            this.txt3Meses.TabIndex = 124;
-            // 
-            // txt6Meses
-            // 
-            this.txt6Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txt6Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt6Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt6Meses.Location = new System.Drawing.Point(457, 446);
-            this.txt6Meses.Multiline = true;
-            this.txt6Meses.Name = "txt6Meses";
-            this.txt6Meses.Size = new System.Drawing.Size(236, 34);
-            this.txt6Meses.TabIndex = 123;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(382, 222);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(322, 24);
+            this.label4.TabIndex = 112;
+            this.label4.Text = "SIMULADOR DE EJECUCIÓN:";
             // 
             // btnPantallaPrincipal
             // 
@@ -292,28 +243,77 @@
             this.btnPantallaPrincipal.TabIndex = 122;
             this.btnPantallaPrincipal.Text = "PANTALLA PRINCIPAL";
             this.btnPantallaPrincipal.UseVisualStyleBackColor = false;
+            this.btnPantallaPrincipal.Click += new System.EventHandler(this.btnPantallaPrincipal_Click_1);
             // 
-            // txtLimiteDeCredito
+            // label10
             // 
-            this.txtLimiteDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txtLimiteDeCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtLimiteDeCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLimiteDeCredito.Location = new System.Drawing.Point(305, 120);
-            this.txtLimiteDeCredito.Multiline = true;
-            this.txtLimiteDeCredito.Name = "txtLimiteDeCredito";
-            this.txtLimiteDeCredito.Size = new System.Drawing.Size(268, 31);
-            this.txtLimiteDeCredito.TabIndex = 121;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(699, 449);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(126, 24);
+            this.label10.TabIndex = 127;
+            this.label10.Text = "Mensuales.";
             // 
-            // txtSaldoDeudor
+            // label7
             // 
-            this.txtSaldoDeudor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txtSaldoDeudor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSaldoDeudor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSaldoDeudor.Location = new System.Drawing.Point(265, 295);
-            this.txtSaldoDeudor.Multiline = true;
-            this.txtSaldoDeudor.Name = "txtSaldoDeudor";
-            this.txtSaldoDeudor.Size = new System.Drawing.Size(352, 35);
-            this.txtSaldoDeudor.TabIndex = 120;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(65, 600);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(312, 24);
+            this.label7.TabIndex = 115;
+            this.label7.Text = "SI PAGA EN 1 MES PAGARIA:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(718, 375);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 24);
+            this.label1.TabIndex = 126;
+            this.label1.Text = "Mensuales.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(65, 302);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(158, 24);
+            this.label5.TabIndex = 113;
+            this.label5.Text = "Saldo Deudor:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(429, 372);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(24, 28);
+            this.label14.TabIndex = 130;
+            this.label14.Text = "$";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(424, 450);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(24, 28);
+            this.label15.TabIndex = 131;
+            this.label15.Text = "$";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(429, 527);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(24, 28);
+            this.label16.TabIndex = 132;
+            this.label16.Text = "$";
             // 
             // txt12Meses
             // 
@@ -326,26 +326,36 @@
             this.txt12Meses.Size = new System.Drawing.Size(237, 34);
             this.txt12Meses.TabIndex = 119;
             // 
-            // txtPlanSugerido
+            // txt6Meses
             // 
-            this.txtPlanSugerido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
-            this.txtPlanSugerido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPlanSugerido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlanSugerido.Location = new System.Drawing.Point(235, 51);
-            this.txtPlanSugerido.Multiline = true;
-            this.txtPlanSugerido.Name = "txtPlanSugerido";
-            this.txtPlanSugerido.Size = new System.Drawing.Size(218, 28);
-            this.txtPlanSugerido.TabIndex = 118;
+            this.txt6Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt6Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt6Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt6Meses.Location = new System.Drawing.Point(457, 446);
+            this.txt6Meses.Multiline = true;
+            this.txt6Meses.Name = "txt6Meses";
+            this.txt6Meses.Size = new System.Drawing.Size(236, 34);
+            this.txt6Meses.TabIndex = 123;
             // 
-            // label9
+            // label17
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(65, 452);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(342, 24);
-            this.label9.TabIndex = 117;
-            this.label9.Text = "SI PAGA EN 6 MESES PAGARIA:";
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(417, 598);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(24, 28);
+            this.label17.TabIndex = 133;
+            this.label17.Text = "$";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(699, 530);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(126, 24);
+            this.label11.TabIndex = 128;
+            this.label11.Text = "Mensuales.";
             // 
             // label8
             // 
@@ -357,15 +367,36 @@
             this.label8.TabIndex = 116;
             this.label8.Text = "SI PAGA EN 3 MESES PAGARIA:";
             // 
-            // label7
+            // label9
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(65, 600);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(312, 24);
-            this.label7.TabIndex = 115;
-            this.label7.Text = "SI PAGA EN 1 MES PAGARIA:";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(65, 452);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(342, 24);
+            this.label9.TabIndex = 117;
+            this.label9.Text = "SI PAGA EN 6 MESES PAGARIA:";
+            // 
+            // txt3Meses
+            // 
+            this.txt3Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt3Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt3Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt3Meses.Location = new System.Drawing.Point(457, 524);
+            this.txt3Meses.Multiline = true;
+            this.txt3Meses.Name = "txt3Meses";
+            this.txt3Meses.Size = new System.Drawing.Size(236, 34);
+            this.txt3Meses.TabIndex = 124;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(699, 600);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(126, 24);
+            this.label13.TabIndex = 129;
+            this.label13.Text = "Mensuales.";
             // 
             // label6
             // 
@@ -377,45 +408,16 @@
             this.label6.TabIndex = 114;
             this.label6.Text = "SI PAGA EN 12 MESES PAGARIA:";
             // 
-            // label5
+            // txt1Menes
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(65, 302);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 24);
-            this.label5.TabIndex = 113;
-            this.label5.Text = "Saldo Deudor:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(382, 222);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(322, 24);
-            this.label4.TabIndex = 112;
-            this.label4.Text = "SIMULADOR DE EJECUCIÓN:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(65, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(198, 24);
-            this.label3.TabIndex = 111;
-            this.label3.Text = "Limite De Credito:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(65, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 24);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "Plan Sugerido:";
+            this.txt1Menes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt1Menes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txt1Menes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt1Menes.Location = new System.Drawing.Point(451, 594);
+            this.txt1Menes.Multiline = true;
+            this.txt1Menes.Name = "txt1Menes";
+            this.txt1Menes.Size = new System.Drawing.Size(242, 34);
+            this.txt1Menes.TabIndex = 125;
             // 
             // frmAdquisicion
             // 

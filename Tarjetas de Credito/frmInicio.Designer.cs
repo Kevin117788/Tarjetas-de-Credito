@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicio));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.labelContinuar = new System.Windows.Forms.Label();
             this.pictureBoxPlatinum = new System.Windows.Forms.PictureBox();
@@ -38,7 +39,6 @@
             this.picBasica = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.timerParpadeo = new System.Windows.Forms.Timer(this.components);
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPlatinum)).BeginInit();
@@ -49,6 +49,7 @@
             // panel1
             // 
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.AutoScroll = true;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -61,6 +62,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1267, 895);
             this.panel1.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(372, 257);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(493, 32);
+            this.label12.TabIndex = 83;
+            this.label12.Text = "Inteligencia En Cada Movimiento";
             // 
             // pictureBox1
             // 
@@ -146,18 +159,6 @@
             // 
             this.timerParpadeo.Enabled = true;
             this.timerParpadeo.Interval = 600;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Georgia", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(372, 257);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(493, 32);
-            this.label12.TabIndex = 83;
-            this.label12.Text = "Inteligencia En Cada Movimiento";
             // 
             // frmInicio
             // 

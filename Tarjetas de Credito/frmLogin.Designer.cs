@@ -43,9 +43,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -65,13 +65,13 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
             this.panel1.Controls.Add(this.btnAgregar);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 191);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(766, 396);

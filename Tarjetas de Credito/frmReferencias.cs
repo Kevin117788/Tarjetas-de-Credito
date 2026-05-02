@@ -66,7 +66,7 @@ namespace Tarjetas_de_Credito
                 TxtIngresosMensuales_Leave(this, EventArgs.Empty);
 
                 // Mandamos a llamar la función que calcula como si le dieran al botón
-                btnCalcular_Click_1(this, EventArgs.Empty);
+                btnCalcular_Click(this, EventArgs.Empty);
             }
         }
 
@@ -102,72 +102,8 @@ namespace Tarjetas_de_Credito
             }
         }
 
-        private void btnCalcular_Click_1(object sender, EventArgs e)
-        {
-            // Validar que los campos de CURP, Nombre y Domicilio no estén vacíos
-            if (string.IsNullOrWhiteSpace(txtCurp.Text) || 
-                string.IsNullOrWhiteSpace(txtNombre.Text) || 
-                string.IsNullOrWhiteSpace(txtDomicilio.Text))
-            {
-                MessageBox.Show("Los campos de CURP, Nombre y Domicilio son obligatorios. Por favor, llénelos antes de continuar.", "Campos Requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            // Validar que se haya seleccionado el estado civil
-            if (!rbSoltero.Checked && !rbCasado.Checked)
-            {
-                MessageBox.Show("Por favor, selecciona tu estado civil antes de calcular.", "Estado Civil Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            try
-            {
-                // 1. Limpiamos y obtenemos el ingreso mensual
-                string textoLimpio = txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim();
-                double mensual = double.Parse(textoLimpio);
-
-                // 2. Calculamos el porcentaje según tu tabla de reglas
-                double porcentaje = 0;
-                int hijos = (int)numericHijos.Value;
-
-                if (rbSoltero.Checked) porcentaje = 0.80;
-                else if (rbCasado.Checked)
-                {
-                    if (hijos == 0) porcentaje = 0.70;
-                    else if (hijos == 1) porcentaje = 0.60;
-                    else if (hijos == 2) porcentaje = 0.55;
-                    else porcentaje = 0.50;
-                }
-
-                // 3. Calculamos el ACUMULABLE (Este es el que manda)
-                double acumulable = mensual * porcentaje;
-                lblIngresoAcumulable.Text = acumulable.ToString("C2");
-
-                // 4. AQUÍ ESTABA EL ERROR: Evaluamos el 'acumulable', no el 'mensual'
-                // Si 40,000 * 0.50 (casado con 3 hijos) = 20,000 -> Debe ser ORO
-                if (acumulable <= 5000)
-                {
-                    txtPlanSugerido.Text = "BÁSICO";
-                    txtPlanSugerido.BackColor = Color.LightBlue;
-                }
-                else if (acumulable >= 5001 && acumulable <= 18000)
-                {
-                    txtPlanSugerido.Text = "ORO";
-                    txtPlanSugerido.BackColor = Color.Gold;
-                }
-                else // Si es más de 30,000
-                {
-                    txtPlanSugerido.Text = "PLATINUM";
-                    txtPlanSugerido.BackColor = Color.Silver;
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Escribe una cantidad válida (solo números) en el ingreso mensual.");
-            }
-        }
-
-        private void btnContinuar_Click_1(object sender, EventArgs e)
+        private void btnContinuar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtPlanSugerido.Text))
             {
@@ -276,7 +212,7 @@ namespace Tarjetas_de_Credito
         }
 
         // Asegúrate de enlazar este evento al "CheckedChanged" de rbSoltero en el diseñador
-        private void rbSoltero_CheckedChanged_1(object sender, EventArgs e)
+        private void rbSoltero_CheckedChanged(object sender, EventArgs e)
         {
             if (rbSoltero.Checked)
             {
@@ -288,7 +224,7 @@ namespace Tarjetas_de_Credito
 
         // Asegúrate de enlazar este evento al "CheckedChanged" de rbCasado en el diseñador
 
-        private void rbCasado_CheckedChanged(object sender, EventArgs e)
+        private void rbCasado_CheckedChanged_1(object sender, EventArgs e)
         {
             if (rbCasado.Checked)
             {
@@ -315,6 +251,72 @@ namespace Tarjetas_de_Credito
 
             // Cerramos o escondemos la ventana actual
             this.Close();
+        }
+
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            // Validar que los campos de CURP, Nombre y Domicilio no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtCurp.Text) ||
+                string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtDomicilio.Text))
+            {
+                MessageBox.Show("Los campos de CURP, Nombre y Domicilio son obligatorios. Por favor, llénelos antes de continuar.", "Campos Requeridos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Validar que se haya seleccionado el estado civil
+            if (!rbSoltero.Checked && !rbCasado.Checked)
+            {
+                MessageBox.Show("Por favor, selecciona tu estado civil antes de calcular.", "Estado Civil Requerido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                // 1. Limpiamos y obtenemos el ingreso mensual
+                string textoLimpio = txtIngresosMensuales.Text.Replace("$", "").Replace(",", "").Trim();
+                double mensual = double.Parse(textoLimpio);
+
+                // 2. Calculamos el porcentaje según tu tabla de reglas
+                double porcentaje = 0;
+                int hijos = (int)numericHijos.Value;
+
+                if (rbSoltero.Checked) porcentaje = 0.80;
+                else if (rbCasado.Checked)
+                {
+                    if (hijos == 0) porcentaje = 0.70;
+                    else if (hijos == 1) porcentaje = 0.60;
+                    else if (hijos == 2) porcentaje = 0.55;
+                    else porcentaje = 0.50;
+                }
+
+                // 3. Calculamos el ACUMULABLE (Este es el que manda)
+                double acumulable = mensual * porcentaje;
+                lblIngresoAcumulable.Text = acumulable.ToString("C2");
+
+                // 4. AQUÍ ESTABA EL ERROR: Evaluamos el 'acumulable', no el 'mensual'
+                // Si 40,000 * 0.50 (casado con 3 hijos) = 20,000 -> Debe ser ORO
+                if (acumulable <= 5000)
+                {
+                    txtPlanSugerido.Text = "BÁSICO";
+                    txtPlanSugerido.BackColor = Color.LightBlue;
+                }
+                else if (acumulable >= 5001 && acumulable <= 18000)
+                {
+                    txtPlanSugerido.Text = "ORO";
+                    txtPlanSugerido.BackColor = Color.Gold;
+                }
+                else // Si es más de 30,000
+                {
+                    txtPlanSugerido.Text = "PLATINUM";
+                    txtPlanSugerido.BackColor = Color.Silver;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Escribe una cantidad válida (solo números) en el ingreso mensual.");
+            }
         }
     }
 

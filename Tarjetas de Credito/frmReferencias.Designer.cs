@@ -67,6 +67,7 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
             this.panel1.Controls.Add(this.btnPantallaPrincipal);
             this.panel1.Controls.Add(this.txtFecha);
@@ -90,7 +91,6 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1088, 986);
@@ -108,6 +108,7 @@
             this.btnPantallaPrincipal.TabIndex = 118;
             this.btnPantallaPrincipal.Text = "PANTALLA PRINCIPAL";
             this.btnPantallaPrincipal.UseVisualStyleBackColor = false;
+            this.btnPantallaPrincipal.Click += new System.EventHandler(this.btnPantallaPrincipal_Click);
             // 
             // txtFecha
             // 
@@ -141,6 +142,7 @@
             this.btnBuscar.TabIndex = 115;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtPlanSugerido
             // 
@@ -249,6 +251,7 @@
             this.btnContinuar.TabIndex = 106;
             this.btnContinuar.Text = "CONTINUAR";
             this.btnContinuar.UseVisualStyleBackColor = false;
+            this.btnContinuar.Click += new System.EventHandler(this.btnContinuar_Click);
             // 
             // btnCalcular
             // 
@@ -262,6 +265,7 @@
             this.btnCalcular.TabIndex = 105;
             this.btnCalcular.Text = "CALCULAR";
             this.btnCalcular.UseVisualStyleBackColor = false;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
             // 
             // label8
             // 
@@ -340,6 +344,7 @@
             this.rbCasado.TabIndex = 1;
             this.rbCasado.Text = "CASADO";
             this.rbCasado.UseVisualStyleBackColor = true;
+            this.rbCasado.CheckedChanged += new System.EventHandler(this.rbCasado_CheckedChanged_1);
             // 
             // rbSoltero
             // 
@@ -352,6 +357,7 @@
             this.rbSoltero.TabIndex = 0;
             this.rbSoltero.Text = "SOLTERO";
             this.rbSoltero.UseVisualStyleBackColor = true;
+            this.rbSoltero.CheckedChanged += new System.EventHandler(this.rbSoltero_CheckedChanged);
             // 
             // label4
             // 
@@ -399,10 +405,10 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label12);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.ForeColor = System.Drawing.Color.White;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
