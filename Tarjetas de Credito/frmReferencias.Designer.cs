@@ -146,7 +146,7 @@
             // 
             // txtPlanSugerido
             // 
-            this.txtPlanSugerido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtPlanSugerido.BackColor = System.Drawing.Color.White;
             this.txtPlanSugerido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPlanSugerido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlanSugerido.Location = new System.Drawing.Point(456, 829);
@@ -158,7 +158,7 @@
             // 
             // lblIngresoAcumulable
             // 
-            this.lblIngresoAcumulable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.lblIngresoAcumulable.BackColor = System.Drawing.Color.White;
             this.lblIngresoAcumulable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblIngresoAcumulable.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIngresoAcumulable.Location = new System.Drawing.Point(400, 760);
@@ -171,7 +171,7 @@
             // 
             // txtIngresosMensuales
             // 
-            this.txtIngresosMensuales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtIngresosMensuales.BackColor = System.Drawing.Color.White;
             this.txtIngresosMensuales.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIngresosMensuales.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIngresosMensuales.Location = new System.Drawing.Point(365, 682);
@@ -183,19 +183,19 @@
             // 
             // txtDomicilio
             // 
-            this.txtDomicilio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtDomicilio.BackColor = System.Drawing.Color.White;
             this.txtDomicilio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDomicilio.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDomicilio.Location = new System.Drawing.Point(183, 455);
             this.txtDomicilio.Margin = new System.Windows.Forms.Padding(4);
             this.txtDomicilio.Multiline = true;
             this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(544, 35);
+            this.txtDomicilio.Size = new System.Drawing.Size(544, 57);
             this.txtDomicilio.TabIndex = 111;
             // 
             // txtNombre
             // 
-            this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtNombre.BackColor = System.Drawing.Color.White;
             this.txtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombre.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(282, 385);
@@ -207,7 +207,7 @@
             // 
             // txtCurp
             // 
-            this.txtCurp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtCurp.BackColor = System.Drawing.Color.White;
             this.txtCurp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCurp.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCurp.Location = new System.Drawing.Point(176, 325);
@@ -307,7 +307,7 @@
             this.groupBox1.Controls.Add(this.rbCasado);
             this.groupBox1.Controls.Add(this.rbSoltero);
             this.groupBox1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(59, 567);
+            this.groupBox1.Location = new System.Drawing.Point(59, 581);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
@@ -385,7 +385,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(54, 519);
+            this.label2.Location = new System.Drawing.Point(54, 553);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 24);

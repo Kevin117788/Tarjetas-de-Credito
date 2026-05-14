@@ -117,51 +117,57 @@ namespace Tarjetas_de_Credito
                 // Convertirlo a un número
                 double saldoDeudor = double.Parse(saldoRaw);
 
-                // Determinar la tasa de interés anual según el plan sugerido
+                // Determinar las tasas de interés según el plan sugerido (usando porcentajes fijos truncados según tabla)
                 string plan = txtPlanSugerido.Text.ToUpper();
-                double interesAnual = 0; // Porcentaje anual
+
+                double p12 = 0, p6 = 0, p3 = 0, p1 = 0;
 
                 if (plan == "BÁSICO" || plan == "BASICO")
                 {
-                    interesAnual = 0.65; // 65% anual
+                    p12 = 0.65;     // 65% anual
+                    p6  = 0.325;    // 32.50% a 6 meses
+                    p3  = 0.1625;   // 16.25% a 3 meses
+                    p1  = 0.0541;   // 5.41% a 1 mes (truncado)
                 }
                 else if (plan == "ORO")
                 {
-                    interesAnual = 0.55; // 55% anual
+                    p12 = 0.55;     // 55% anual
+                    p6  = 0.275;    // 27.50% a 6 meses
+                    p3  = 0.1375;   // 13.75% a 3 meses
+                    p1  = 0.0458;   // 4.58% a 1 mes (truncado)
                 }
                 else if (plan == "PLATINUM")
                 {
-                    interesAnual = 0.45; // 45% anual
+                    p12 = 0.45;     // 45% anual
+                    p6  = 0.225;    // 22.50% a 6 meses
+                    p3  = 0.1125;   // 11.25% a 3 meses
+                    p1  = 0.0375;   // 3.75% a 1 mes
                 }
 
-                // Hacer cada uno de los cálculos según el interés detectado
+                // Hacer cada uno de los cálculos según las tasas exactas predefinidas
 
-                // A 12 Meses (100% de la tasa anual)
-                double interes12 = saldoDeudor * interesAnual; 
+                // A 12 Meses
+                double interes12 = saldoDeudor * p12; 
                 double total12 = saldoDeudor + interes12;
                 double mensualidad12 = total12 / 12;
+                txt12Meses.Text = mensualidad12.ToString("N2");
 
-                txt12Meses.Text = mensualidad12.ToString("N2"); // "N2" da formato con 2 decimales sin símbolo de peso
-
-                // A 6 Meses (Mitad del interés anual)
-                double interes6 = saldoDeudor * (interesAnual / 2);
+                // A 6 Meses
+                double interes6 = saldoDeudor * p6;
                 double total6 = saldoDeudor + interes6;
                 double mensualidad6 = total6 / 6;
-
                 txt6Meses.Text = mensualidad6.ToString("N2");
 
-                // A 3 Meses (Un cuarto del interés anual)
-                double interes3 = saldoDeudor * (interesAnual / 4);
+                // A 3 Meses
+                double interes3 = saldoDeudor * p3;
                 double total3 = saldoDeudor + interes3;
                 double mensualidad3 = total3 / 3;
-
                 txt3Meses.Text = mensualidad3.ToString("N2");
 
-                // A 1 Mes (Un doceavo del interés anual)
-                double interes1 = saldoDeudor * (interesAnual / 12);
+                // A 1 Mes
+                double interes1 = saldoDeudor * p1;
                 double total1 = saldoDeudor + interes1;
                 double mensualidad1 = total1; // Dividido en 1 mes
-
                 txt1Menes.Text = mensualidad1.ToString("N2");
             }
             catch (Exception ex)

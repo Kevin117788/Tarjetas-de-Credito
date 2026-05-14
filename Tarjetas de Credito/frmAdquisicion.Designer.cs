@@ -136,7 +136,7 @@
             // 
             // txtPlanSugerido
             // 
-            this.txtPlanSugerido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtPlanSugerido.BackColor = System.Drawing.Color.White;
             this.txtPlanSugerido.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPlanSugerido.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlanSugerido.Location = new System.Drawing.Point(235, 51);
@@ -147,7 +147,7 @@
             // 
             // txtLimiteDeCredito
             // 
-            this.txtLimiteDeCredito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtLimiteDeCredito.BackColor = System.Drawing.Color.White;
             this.txtLimiteDeCredito.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLimiteDeCredito.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLimiteDeCredito.Location = new System.Drawing.Point(305, 120);
@@ -202,7 +202,7 @@
             // 
             // txtSaldoDeudor
             // 
-            this.txtSaldoDeudor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txtSaldoDeudor.BackColor = System.Drawing.Color.White;
             this.txtSaldoDeudor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSaldoDeudor.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSaldoDeudor.Location = new System.Drawing.Point(265, 295);
@@ -317,7 +317,7 @@
             // 
             // txt12Meses
             // 
-            this.txt12Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt12Meses.BackColor = System.Drawing.Color.White;
             this.txt12Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt12Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt12Meses.Location = new System.Drawing.Point(475, 369);
@@ -328,7 +328,7 @@
             // 
             // txt6Meses
             // 
-            this.txt6Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt6Meses.BackColor = System.Drawing.Color.White;
             this.txt6Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt6Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt6Meses.Location = new System.Drawing.Point(457, 446);
@@ -379,7 +379,7 @@
             // 
             // txt3Meses
             // 
-            this.txt3Meses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt3Meses.BackColor = System.Drawing.Color.White;
             this.txt3Meses.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt3Meses.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt3Meses.Location = new System.Drawing.Point(457, 524);
@@ -410,7 +410,7 @@
             // 
             // txt1Menes
             // 
-            this.txt1Menes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(111)))), ((int)(((byte)(139)))), ((int)(((byte)(167)))));
+            this.txt1Menes.BackColor = System.Drawing.Color.White;
             this.txt1Menes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txt1Menes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt1Menes.Location = new System.Drawing.Point(451, 594);
