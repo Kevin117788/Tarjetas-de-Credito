@@ -54,6 +54,12 @@ namespace Tarjetas_de_Credito
                         if (result != null)
                         {
                             string rol = result.ToString();
+                            
+                            // Guardamos la sesión
+                            SesionGlobal.UsuarioActual = txtUsuario.Text;
+                            SesionGlobal.ContrasenaActual = txtContraseña2.Text;
+                            SesionGlobal.RolActual = rol;
+                            
                             MessageBox.Show($"Bienvenido {txtUsuario.Text}. Rol: {rol}", "Ingreso exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             
                             frmInicio inicio = new frmInicio();

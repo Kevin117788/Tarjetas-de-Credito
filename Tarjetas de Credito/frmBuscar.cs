@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Tarjetas_de_Credito
 {
@@ -28,6 +29,54 @@ namespace Tarjetas_de_Credito
             // TODO: esta línea de código carga datos en la tabla 'tarjetaDeCreditoDataSet.Clientes' Puede moverla o quitarla según sea necesario.
             this.clientesTableAdapter.Fill(this.tarjetaDeCreditoDataSet.Clientes);
 
+            // Ocultamos el campo de contraseña ya que ahora es automático
+            txtContraseña.Visible = false;
+
+            // Descifrar toda la información para presentarla automáticamente
+            DescifrarDatos();
+        }
+
+        private void DescifrarDatos()
+        {
+            string clave = "12345678";
+            byte[] rc2Key = System.Text.Encoding.UTF8.GetBytes(clave.PadRight(8, '0').Substring(0, 8)); 
+            byte[] rc2Iv = System.Text.Encoding.UTF8.GetBytes(clave.PadLeft(8, '0').Substring(0, 8));
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                if (row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value != null)
+                {
+                    try
+                    {
+                        string encryptedNombre = row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value.ToString();
+                        byte[] cipherBytes = Convert.FromBase64String(encryptedNombre);
+                        row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                    }
+                    catch { }
+                }
+
+                if (row.Cells["curpDataGridViewTextBoxColumn"].Value != null)
+                {
+                    try
+                    {
+                        string encryptedCurp = row.Cells["curpDataGridViewTextBoxColumn"].Value.ToString();
+                        byte[] cipherBytes = Convert.FromBase64String(encryptedCurp);
+                        row.Cells["curpDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                    }
+                    catch { }
+                }
+
+                if (row.Cells["domicilioDataGridViewTextBoxColumn"].Value != null)
+                {
+                    try
+                    {
+                        string encryptedDom = row.Cells["domicilioDataGridViewTextBoxColumn"].Value.ToString();
+                        byte[] cipherBytes = Convert.FromBase64String(encryptedDom);
+                        row.Cells["domicilioDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                    }
+                    catch { }
+                }
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -56,5 +105,11 @@ namespace Tarjetas_de_Credito
                 MessageBox.Show("Por favor, selecciona un cliente de la lista.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void txtContraseña_TextChanged(object sender, EventArgs e)
+        {
+            // Ignorado intencionalmente (la desencriptación ahora es automática al cargar).
+        }
+
     }
 }
