@@ -253,6 +253,12 @@ namespace Tarjetas_de_Credito
             this.Close();
         }
 
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmCliente ventanaCliente = new frmCliente();
+            ventanaCliente.StartPosition = FormStartPosition.CenterParent; // O Manual si quieres que comparta Location
+            ventanaCliente.ShowDialog();
+        }
 
         private void btnCalcular_Click(object sender, EventArgs e)
         {

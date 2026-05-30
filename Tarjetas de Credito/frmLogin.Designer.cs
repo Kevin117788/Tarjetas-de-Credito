@@ -82,7 +82,7 @@
             this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(60)))), ((int)(((byte)(91)))));
             this.btnAgregar.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(281, 313);
+            this.btnAgregar.Location = new System.Drawing.Point(296, 263);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(204, 47);
             this.btnAgregar.TabIndex = 12;
@@ -95,10 +95,9 @@
             this.txtContraseña2.BackColor = System.Drawing.Color.White;
             this.txtContraseña2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseña2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña2.Location = new System.Drawing.Point(253, 233);
-            this.txtContraseña2.Multiline = true;
+            this.txtContraseña2.Location = new System.Drawing.Point(253, 197);
             this.txtContraseña2.Name = "txtContraseña2";
-            this.txtContraseña2.Size = new System.Drawing.Size(278, 29);
+            this.txtContraseña2.Size = new System.Drawing.Size(278, 31);
             this.txtContraseña2.TabIndex = 11;
             this.txtContraseña2.TextChanged += new System.EventHandler(this.txtContraseña2_TextChanged);
             // 
@@ -108,9 +107,8 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(253, 87);
-            this.txtUsuario.Multiline = true;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(278, 34);
+            this.txtUsuario.Size = new System.Drawing.Size(278, 31);
             this.txtUsuario.TabIndex = 11;
             this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
             // 
@@ -118,7 +116,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(302, 185);
+            this.label2.Location = new System.Drawing.Point(312, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 24);
             this.label2.TabIndex = 9;
