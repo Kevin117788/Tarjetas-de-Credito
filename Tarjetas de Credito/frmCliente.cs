@@ -16,6 +16,12 @@ namespace Tarjetas_de_Credito
         public frmCliente()
         {
             InitializeComponent();
+
+            // Limitar los caracteres de acuerdo con límites para la base de datos
+            // asumiendo un tamaño de base de datos suficiente antes de encriptar
+            txtNombre2.MaxLength = 50; 
+            txtCurp2.MaxLength = 18;  
+            txtDomicilio2.MaxLength = 100;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -27,46 +33,35 @@ namespace Tarjetas_de_Credito
             }
 
             // Usamos una contraseña universal interna para que encripte transparente
-            string clave = "12345678"; 
-
-            // Para RC2 usando la contraseña como base
-            // Necesitamos asegurarnos de que la llave y el IV tengan una longitud específica, por ej. 8 bytes para RC2
-            byte[] rc2Key = Encoding.UTF8.GetBytes(clave.PadRight(8, '0').Substring(0, 8)); 
-            byte[] rc2Iv = Encoding.UTF8.GetBytes(clave.PadLeft(8, '0').Substring(0, 8)); // Otra derivación simple para el IV
-            
             try
             {
-                // Ciframos usando la clase RC2 ya configurada
-                string nobreCifrado = Convert.ToBase64String(C_RC2.Encriptar(txtNombre2.Text, rc2Key, rc2Iv));
+                // Configurar clave para encriptar
+                string clave = "12345678";
+                byte[] rc2Key = Encoding.UTF8.GetBytes(clave.PadRight(8, '0').Substring(0, 8)); 
+                byte[] rc2Iv = Encoding.UTF8.GetBytes(clave.PadLeft(8, '0').Substring(0, 8));
+
+                // Encriptar los datos
+                string nombreCifrado = Convert.ToBase64String(C_RC2.Encriptar(txtNombre2.Text, rc2Key, rc2Iv));
                 string curpCifrado = Convert.ToBase64String(C_RC2.Encriptar(txtCurp2.Text, rc2Key, rc2Iv));
                 string domicilioCifrado = Convert.ToBase64String(C_RC2.Encriptar(txtDomicilio2.Text, rc2Key, rc2Iv));
 
-                string connectionString = Properties.Settings.Default.TarjetaDeCreditoConnectionString;
+                string connectionString = Conexion.ObtenerCadena();
                 using (SqlConnection con = new SqlConnection(connectionString))
                 {
                     con.Open();
 
-                    // Guardamos la contraseña en la tabla Contraseñas como solicitaste
-                    string queryContrasena = "INSERT INTO Contraseñas (Contraseña, Descripcion) VALUES (@Contraseña, @Descripcion)";
-                    using (SqlCommand cmd = new SqlCommand(queryContrasena, con))
-                    {
-                        cmd.Parameters.AddWithValue("@Contraseña", clave);
-                        cmd.Parameters.AddWithValue("@Descripcion", $"Clave del cliente: {txtNombre2.Text}");
-                        cmd.ExecuteNonQuery();
-                    }
-
-                    // Guardamos cliente cifrado
+                    // Guardamos cliente encriptado
                     string queryCliente = "INSERT INTO Clientes (Nombre_Completo, Curp, Domicilio) VALUES (@Nombre, @Curp, @Domicilio)";
                     using (SqlCommand cmdCliente = new SqlCommand(queryCliente, con))
                     {
-                        cmdCliente.Parameters.AddWithValue("@Nombre", nobreCifrado);
+                        cmdCliente.Parameters.AddWithValue("@Nombre", nombreCifrado);
                         cmdCliente.Parameters.AddWithValue("@Curp", curpCifrado);
                         cmdCliente.Parameters.AddWithValue("@Domicilio", domicilioCifrado);
                         cmdCliente.ExecuteNonQuery();
                     }
 
-                    MessageBox.Show("Cliente guardado y cifrado exitosamente usando la contraseña provista.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+                    MessageBox.Show("Cliente guardado y cifrado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     // Limpiamos los campos
                     txtCurp2.Clear();
                     txtNombre2.Clear();

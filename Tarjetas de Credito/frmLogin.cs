@@ -37,7 +37,7 @@ namespace Tarjetas_de_Credito
                 return;
             }
 
-            string connectionString = Properties.Settings.Default.TarjetaDeCreditoConnectionString;
+            string connectionString = Conexion.ObtenerCadena();
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 try
