@@ -26,13 +26,34 @@ namespace Tarjetas_de_Credito
 
         private void frmBuscar_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'tarjetaDeCreditoDataSet.Clientes' Puede moverla o quitarla según sea necesario.
-            this.clientesTableAdapter.Fill(this.tarjetaDeCreditoDataSet.Clientes);
+            // Ya que el dataset aparentemente se eliminó o cambió de nombre en el diseñador temporalmente,
+            // llenamos el DataGridView de manera manual utilizando la nueva clase de Conexion.
+            try
+            {
+                string connectionString = Conexion.ObtenerCadena();
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT IdClientes, Nombre_Completo, Curp, Domicilio FROM Clientes";
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, con))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
 
-            // Ocultamos el campo de contraseña ya que ahora es automático
+                        // Si el dataGridView1 no tiene columnas creadas, autogenerarlas.
+                        dataGridView1.AutoGenerateColumns = true;
+                        dataGridView1.DataSource = dt;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los clientes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            // Ocultamos el campo de contraseña
             txtContraseña.Visible = false;
 
-            // Descifrar toda la información para presentarla automáticamente
+            // Desciframos la información encriptada contenida en el DataGridView
             DescifrarDatos();
         }
 
@@ -42,37 +63,49 @@ namespace Tarjetas_de_Credito
             byte[] rc2Key = System.Text.Encoding.UTF8.GetBytes(clave.PadRight(8, '0').Substring(0, 8)); 
             byte[] rc2Iv = System.Text.Encoding.UTF8.GetBytes(clave.PadLeft(8, '0').Substring(0, 8));
 
+            // Si las columnas fueron autogeneradas desde DataTable, sus nombres coincidirán con los de la tabla SQL.
+            string colNombre = "Nombre_Completo";
+            string colCurp = "Curp";
+            string colDomicillo = "Domicilio";
+
+            // Si estamos usando las columnas predefinidas en el diseñador (las que empiezan con minusculas), cambiaríamos los nombres, pero esto cubre el caso manual.
+            if (dataGridView1.Columns.Contains("nombreCompletoDataGridViewTextBoxColumn")) colNombre = "nombreCompletoDataGridViewTextBoxColumn";
+            if (dataGridView1.Columns.Contains("curpDataGridViewTextBoxColumn")) colCurp = "curpDataGridViewTextBoxColumn";
+            if (dataGridView1.Columns.Contains("domicilioDataGridViewTextBoxColumn")) colDomicillo = "domicilioDataGridViewTextBoxColumn";
+
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                if (row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value != null)
+                if (row.IsNewRow) continue;
+
+                if (dataGridView1.Columns.Contains(colNombre) && row.Cells[colNombre].Value != null)
                 {
                     try
                     {
-                        string encryptedNombre = row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value.ToString();
+                        string encryptedNombre = row.Cells[colNombre].Value.ToString();
                         byte[] cipherBytes = Convert.FromBase64String(encryptedNombre);
-                        row.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                        row.Cells[colNombre].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
                     }
                     catch { }
                 }
 
-                if (row.Cells["curpDataGridViewTextBoxColumn"].Value != null)
+                if (dataGridView1.Columns.Contains(colCurp) && row.Cells[colCurp].Value != null)
                 {
                     try
                     {
-                        string encryptedCurp = row.Cells["curpDataGridViewTextBoxColumn"].Value.ToString();
+                        string encryptedCurp = row.Cells[colCurp].Value.ToString();
                         byte[] cipherBytes = Convert.FromBase64String(encryptedCurp);
-                        row.Cells["curpDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                        row.Cells[colCurp].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
                     }
                     catch { }
                 }
 
-                if (row.Cells["domicilioDataGridViewTextBoxColumn"].Value != null)
+                if (dataGridView1.Columns.Contains(colDomicillo) && row.Cells[colDomicillo].Value != null)
                 {
                     try
                     {
-                        string encryptedDom = row.Cells["domicilioDataGridViewTextBoxColumn"].Value.ToString();
+                        string encryptedDom = row.Cells[colDomicillo].Value.ToString();
                         byte[] cipherBytes = Convert.FromBase64String(encryptedDom);
-                        row.Cells["domicilioDataGridViewTextBoxColumn"].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
+                        row.Cells[colDomicillo].Value = C_RC2.Desencriptar(cipherBytes, rc2Key, rc2Iv);
                     }
                     catch { }
                 }
@@ -88,11 +121,19 @@ namespace Tarjetas_de_Credito
                 // Obtener la fila seleccionada
                 DataGridViewRow fila = dataGridView1.SelectedRows[0];
 
+                string colNombre = "Nombre_Completo";
+                string colCurp = "Curp";
+                string colDomicillo = "Domicilio";
+
+                if (dataGridView1.Columns.Contains("nombreCompletoDataGridViewTextBoxColumn")) colNombre = "nombreCompletoDataGridViewTextBoxColumn";
+                if (dataGridView1.Columns.Contains("curpDataGridViewTextBoxColumn")) colCurp = "curpDataGridViewTextBoxColumn";
+                if (dataGridView1.Columns.Contains("domicilioDataGridViewTextBoxColumn")) colDomicillo = "domicilioDataGridViewTextBoxColumn";
+
                 // Obtener los datos. OJO: Los nombres adentro del string ["Curp"], ["Nombre"], ["Domicilio"] 
                 // DEBEN SER los nombres de las columnas que le pusiste a tu base de datos / datagridview
-                this.CurpSeleccionado = fila.Cells["curpDataGridViewTextBoxColumn"].Value.ToString();
-                this.NombreSeleccionado = fila.Cells["nombreCompletoDataGridViewTextBoxColumn"].Value.ToString();
-                this.DomicilioSeleccionado = fila.Cells["domicilioDataGridViewTextBoxColumn"].Value.ToString();
+                this.CurpSeleccionado = fila.Cells[colCurp].Value?.ToString();
+                this.NombreSeleccionado = fila.Cells[colNombre].Value?.ToString();
+                this.DomicilioSeleccionado = fila.Cells[colDomicillo].Value?.ToString();
 
                 // Le dice al programa que devolvemos un 'resultado OK'
                 this.DialogResult = DialogResult.OK; 
